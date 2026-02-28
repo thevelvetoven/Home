@@ -3,121 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Velvet Oven | Signature Collection</title>
+    <title>The Velvet Oven | Signature & Classic Collection</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #d4af37; --black: #0a0a0a; --dark-grey: #121212; --white: #ffffff; }
         body { margin: 0; background-color: var(--black); color: var(--white); font-family: 'Montserrat', sans-serif; }
-        
-        /* Navigation & Logo */
         nav { padding: 20px; text-align: center; background: var(--black); border-bottom: 1px solid #222; }
-        .logo { width: 180px; transition: 0.5s; }
-
-        /* Hero */
+        .logo { width: 180px; }
         header {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1535254973040-607b474cb80d?auto=format&fit=crop&w=1920&q=80');
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
-        header h1 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.5rem; letter-spacing: 4px; }
-
-        /* Collection Grid */
-        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
-        
+        header h1 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.5rem; letter-spacing: 4px; margin: 0; }
+        .section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
         .product-card { background: var(--dark-grey); border: 1px solid #222; padding: 15px; transition: 0.3s; }
-        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .product-card img { width: 100%; height: 300px; object-fit: cover; margin-bottom: 20px; }
-        .product-card h3 { font-family: 'Cinzel', serif; color: var(--gold); margin: 10px 0; }
-        .product-card p { font-size: 0.85rem; color: #aaa; letter-spacing: 1px; padding: 0 10px; }
-        .price { color: var(--gold); font-weight: bold; margin-top: 15px; display: block; }
-
-        /* Order Form */
-        .order-container { background: #111; padding: 60px; border: 1px solid var(--gold); max-width: 700px; margin: 50px auto; }
-        input, select, textarea { 
-            width: 100%; padding: 15px; margin: 12px 0; background: transparent; 
-            border: 1px solid #333; color: white; box-sizing: border-box; 
-        }
-        input:focus, select:focus, textarea:focus { border-color: var(--gold); outline: none; }
-        
-        .btn { 
-            background: var(--gold); color: black; padding: 18px 45px; border: none; 
-            font-family: 'Cinzel', serif; font-weight: bold; cursor: pointer; width: 100%; 
-            transition: 0.3s; margin-top: 20px;
-        }
-        .btn:hover { background: white; letter-spacing: 3px; }
-
+        .product-card:hover { border-color: var(--gold); }
+        .product-card img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 15px; }
+        .product-card h3 { font-family: 'Cinzel', serif; color: var(--gold); margin: 10px 0; font-size: 1.1rem; }
+        .product-card p { font-size: 0.8rem; color: #aaa; height: 40px; }
+        .price-tag { color: var(--gold); font-size: 0.9rem; font-weight: bold; border-top: 1px solid #333; padding-top: 10px; display: block; }
+        .order-container { background: #111; padding: 40px; border: 1px solid var(--gold); max-width: 600px; margin: 50px auto; text-align: left; }
+        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; background: #1a1a1a; border: 1px solid #333; color: white; box-sizing: border-box; }
+        .total-display { background: #000; padding: 15px; border: 1px dashed var(--gold); text-align: center; margin: 15px 0; color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.2rem; }
+        .btn { background: var(--gold); color: black; padding: 15px; border: none; font-family: 'Cinzel', serif; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
+        .btn:hover { background: white; }
         footer { padding: 40px; text-align: center; color: #444; font-size: 0.8rem; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
     <nav>
-        <img src="https://raw.githubusercontent.com/thevelvetoven/Home/refs/heads/main/Gemini_Generated_Image_acm16sacm16safffcm1.png" alt="The Velvet Oven Logo" class="logo">
+        <img src="https://raw.githubusercontent.com/thevelvetoven/Home/refs/heads/main/Gemini_Generated_Image_acm16sacm16safffcm1.png" alt="Logo" class="logo">
     </nav>
 
     <header>
-        <h1>The Signature Collection</h1>
-        <p style="letter-spacing: 5px; font-weight: 200;">CRAFTED FOR THE EXTRAORDINARY</p>
+        <h1>Our Menu</h1>
+        <p style="letter-spacing: 3px; font-size: 0.8rem;">PURE ARTISAN INDULGENCE</p>
     </header>
 
     <section class="section">
         <div class="grid">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Belgian Gold">
-                <h3>The Belgian Gold</h3>
-                <p>Layers of 55% dark Belgian chocolate ganache topped with edible 24K gold leaf.</p>
-                <span class="price">Premium Selection</span>
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500" alt="Truffle">
+                <h3>Chocolate Truffle</h3>
+                <p>Dense, silky dark chocolate ganache layers.</p>
+                <span class="price-tag">₹350 / lb</span>
             </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=800&q=80" alt="Midnight Velvet">
-                <h3>Midnight Velvet</h3>
-                <p>A sophisticated deep-cocoa sponge with silk-textured Madagascar vanilla cream.</p>
-                <span class="price">Signature Choice</span>
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb80d?auto=format&fit=crop&w=500" alt="Photo Cake">
+                <h3>Custom Photo Cake</h3>
+                <p>Your favorite memories on a delicious canvas.</p>
+                <span class="price-tag">₹500 / lb</span>
             </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80" alt="Ivorian Berries">
-                <h3>Ivorian Berries</h3>
-                <p>White chocolate mousse infused with fresh hand-picked seasonal berries.</p>
-                <span class="price">Artisanal Favorite</span>
+                <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=500" alt="Red Velvet">
+                <h3>Red Velvet</h3>
+                <p>Classic crimson sponge with cream cheese frosting.</p>
+                <span class="price-tag">₹400 / lb</span>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500" alt="Black Forest">
+                <h3>Black Forest</h3>
+                <p>Whipped cream, cherries, and chocolate shavings.</p>
+                <span class="price-tag">₹350 / lb</span>
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="order-container">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--gold);">Place Your Order</h2>
-            <p style="font-size: 0.8rem; color: #888;">Note: All luxury cakes require 24-hour advance booking.</p>
-            
-            <form action="https://formspree.io/f/xqedjvjn" method="POST">
-                <input type="text" name="name" placeholder="FULL NAME" required>
+            <h2 style="font-family: 'Cinzel', serif; color: var(--gold); text-align: center;">Place Your Order</h2>
+            <form action="https://formspree.io/f/xqedjvjn" method="POST" id="orderForm">
+                <input type="text" name="name" placeholder="YOUR NAME" required>
                 <input type="tel" name="phone" placeholder="WHATSAPP NUMBER" required>
                 
-                <select name="cake_selection" required>
-                    <option value="" disabled selected>SELECT YOUR CAKE</option>
-                    <option value="Belgian Gold">The Belgian Gold</option>
-                    <option value="Midnight Velvet">Midnight Velvet</option>
-                    <option value="Ivorian Berries">Ivorian Berries</option>
-                    <option value="Custom Request">Bespoke Custom Design</option>
+                <select name="cake_type" id="cakeSelect" required onchange="calculateTotal()">
+                    <option value="" disabled selected>CHOOSE FLAVOR</option>
+                    <option value="350">Chocolate Truffle (₹350/lb)</option>
+                    <option value="500">Custom Photo Cake (₹500/lb)</option>
+                    <option value="400">Red Velvet (₹400/lb)</option>
+                    <option value="350">Black Forest (₹350/lb)</option>
+                    <option value="300">Classic Vanilla (₹300/lb)</option>
+                    <option value="600">Special Doll/Doraemon Cake (Fixed Starting ₹600)</option>
                 </select>
 
-                <select name="weight" required>
-                    <option value="0.5kg">0.5 KG</option>
-                    <option value="1kg">1.0 KG</option>
-                    <option value="2kg+">2.0 KG +</option>
+                <select name="weight" id="weightSelect" required onchange="calculateTotal()">
+                    <option value="1">1 Pound</option>
+                    <option value="2">2 Pounds</option>
+                    <option value="3">3 Pounds</option>
+                    <option value="5">5 Pounds</option>
                 </select>
 
-                <input type="text" name="delivery_date" placeholder="DELIVERY DATE (DD/MM/YYYY)" onfocus="(this.type='date')" required>
+                <div class="total-display">
+                    Estimated Total: <span id="totalPrice">₹0</span>
+                </div>
+
+                <input type="text" name="delivery_date" placeholder="DELIVERY DATE" onfocus="(this.type='date')" required>
+                <textarea name="instructions" rows="3" placeholder="Message on cake / Special instructions..."></textarea>
                 
-                <textarea name="special_instructions" rows="4" placeholder="ANY SPECIAL MESSAGE ON CAKE OR INSTRUCTIONS?"></textarea>
-                
-                <input type="text" name="_gotcha" style="display:none" />
-                <button type="submit" class="btn">REQUEST BOOKING</button>
+                <input type="hidden" name="estimated_bill" id="hiddenBill">
+                <button type="submit" class="btn">CONFIRM BOOKING</button>
             </form>
         </div>
     </section>
+
+    <script>
+        function calculateTotal() {
+            const pricePerLb = document.getElementById('cakeSelect').value;
+            const weight = document.getElementById('weightSelect').value;
+            if(pricePerLb) {
+                const total = pricePerLb * weight;
+                document.getElementById('totalPrice').innerText = '₹' + total;
+                document.getElementById('hiddenBill').value = '₹' + total;
+            }
+        }
+    </script>
 
     <footer>
         &copy; 2026 THE VELVET OVEN | PATNA <br>
