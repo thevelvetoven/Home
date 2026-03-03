@@ -1195,7 +1195,7 @@
         <h3 class="form-title">Place Your Order</h3>
         <p class="form-subtitle">24-Hour Advance Notice Preferred</p>
 
-        <form action="https://formspree.io/f/xqedjvjn" method="POST" onsubmit="handleSubmit(event)">
+        <form id="orderForm">
             <div class="form-row">
                 <div class="form-group">
                     <label>Your Name</label>
@@ -1383,12 +1383,72 @@
     const d = new Date(); d.setDate(d.getDate() + 1);
     document.getElementById('deliveryDate').min = d.toISOString().split('T')[0];
 
-    // ── Toast on submit ──
-    function handleSubmit(e) {
+    // ── Form AJAX Submit ──
+    document.getElementById('orderForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const btn = this.querySelector('.submit-btn');
+        const btnText = btn.querySelector('span');
         const toast = document.getElementById('toast');
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 4000);
-    }
+
+        // Basic validation: flavour must be selected
+        const flavor = document.getElementById('fSelect').value;
+        if (!flavor) {
+            document.getElementById('fSelect').focus();
+            return;
+        }
+
+        // Loading state
+        btnText.textContent = 'Sending…';
+        btn.disabled = true;
+
+        const formData = new FormData(this);
+
+        // Add the selected flavour name (not just price) for readability in email
+        const flavorSelect = document.getElementById('fSelect');
+        const flavorName = flavorSelect.options[flavorSelect.selectedIndex].getAttribute('data-name');
+        formData.set('flavor', flavorName + ' (₹' + flavor + '/lb)');
+
+        try {
+            const res = await fetch('https://formspree.io/f/xqedjvjn', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                // Success
+                btnText.textContent = '✓ Order Confirmed!';
+                btn.style.background = '#2a7a2a';
+                toast.querySelector('.toast-title').textContent = 'Order Received ✦';
+                toast.querySelector('div:last-child').textContent = "We'll confirm via WhatsApp within 30 minutes.";
+                toast.classList.add('show');
+                this.reset();
+                document.getElementById('tPrice').innerText = '₹ —';
+                document.getElementById('hBill').value = '';
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    btnText.textContent = 'Confirm Booking →';
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 5000);
+            } else {
+                throw new Error('Server error');
+            }
+        } catch (err) {
+            btnText.textContent = 'Failed — Try Again';
+            btn.style.background = '#7a2a2a';
+            toast.querySelector('.toast-title').textContent = 'Submission Failed';
+            toast.querySelector('div:last-child').textContent = 'Please WhatsApp us directly to place your order.';
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+                btnText.textContent = 'Confirm Booking →';
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 5000);
+        }
+    });
 </script>
 
 </body>
